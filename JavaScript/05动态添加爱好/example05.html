@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>兴趣爱好</title>
+	<style>
+	    #hobbies {
+	    	margin:0px 80px;
+	    }
+	    #resultBtn {
+	    	margin:20px 0 0 140px;
+	    }
+	    #hobWp {
+	    	margin-top:20px;
+	    }
+
+	</style>
+</head>
+<body>
+	<div id="all">
+		<label>兴趣爱好：<input type="text" id="originText"></label>
+		<button id="addBtn">增加</button>
+		<div id="hobbies">
+			<!-- <p>
+			    <input type="text">
+			    <button>删除</button>
+			</p> -->
+		</div>
+		<button id="resultBtn">查看</button>
+		<div id="hobWp"></div>
+	</div>
+
+
+	<script>
+		var originText = document.getElementById('originText');
+		var addBtn = document.getElementById('addBtn');
+		var hobbies = document.getElementById('hobbies');
+		var resultBtn = document.getElementById('resultBtn');
+		var hobWp = document.getElementById('hobWp');
+
+		addBtn.onclick = function() {
+			var sddhob = addhob();
+			var hobCounts = hobCount();
+			if (hobCounts >= 4) {
+				addBtn.disabled = 'disabled';
+			}
+		};
+		resultBtn.onclick=result;
+
+        function addhob() {
+		    var p = document.createElement('p');
+		    var input = document.createElement('input');
+		    input.type="text";
+		    var nbsp = document.createElement('span');
+		    var nbspTxt = document.createTextNode(' ');
+		    nbsp.appendChild(nbspTxt);
+		    delBtn = document.createElement('button');
+		    var delBtnTxt = document.createTextNode('删除');
+		    delBtn.appendChild(delBtnTxt);
+		    delBtn.onclick=delhob;
+		    p.appendChild(input);
+		    p.appendChild(nbsp);
+		    p.appendChild(delBtn);
+		    hobbies.appendChild(p);
+		    // return p;
+		};
+
+		function hobCount() {
+			var newhob = hobbies.getElementsByTagName('p').length;
+			return newhob;
+		};
+		
+		function delhob() {
+			var info = confirm('确定要删除吗？');
+			if (info) {
+		        hobbies.removeChild(this.parentNode);
+		        addBtn.disabled='';
+		    }
+		};
+
+		function result() {
+			var allHob = hobbies.getElementsByTagName('input');
+			hobArr=[];
+			for (var i=0;i < allHob.length; i++) { 
+				hobArr.push(allHob[i].value);
+			}
+			hobArr.unshift(originText.value);
+			console.log(hobArr);
+			hobWp.innerHTML ="你的兴趣爱好有："+ hobArr.join('-');
+		}
+        
+
+
+		
+	</script>
+</body>
+</html>

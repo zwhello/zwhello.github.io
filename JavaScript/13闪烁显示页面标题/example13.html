@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>闪烁显示页面标题</title>
+</head>
+<body>
+	 <script>
+		// function flashTitle() {
+		// 	// var title = document.title;
+		// 	setInterval(function() {
+		// 		if (document.title == "WBC") {
+		// 			document.title = "HTML5";
+		// 		} else {
+		// 			document.title = "WBC";
+		// 		}
+		// 	}, 500);
+		// }
+		// flashTitle();
+
+
+
+
+
+
+
+
+		var title = document.getElementsByTagName('title');
+
+
+		setInterval(function(){
+			title[0].innerHTML = '开始闪烁';
+
+			// title[0].style.backgroundColor = 'red';
+			setTimeout(function(){
+				title[0].innerHTML = '1';
+				
+			   //  title[0].style.backgroundColor = 'green';
+			},1000);
+			setTimeout(function(){
+				title[0].innerHTML = '2';
+				
+			//     title[0].style.backgroundColor = 'blue';
+			},2000);
+			setTimeout(function(){
+				title[0].innerHTML = '3';
+				
+			//     title[0].style.backgroundColor = 'pink';
+			},3000);
+		},3000)
+	</script>
+</body>
+</html>

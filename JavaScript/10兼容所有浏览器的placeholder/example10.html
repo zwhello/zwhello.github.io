@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>兼容所有浏览器的placeholder</title>
+	<style>
+	    .outerDiv {
+	    	display: inline-block;
+	    	position: relative;
+	    	/*margin-bottom: 20px;*/
+	    }
+	    .outerDiv > span {
+	    	display: inline-block;
+	    	height:100%;
+	    	width: 100%;
+	    	position: absolute;
+	    	top:0px;
+	    	left:0px;
+	    	font-family: Arial;
+	    	text-indent: 3px;
+	    	font-size: 13.3px;
+	    	color:#a9a9a9;
+	    	line-height:20px;//历史遗留问题
+	    }
+	    .outerDiv > input {
+	    	position: relative;
+	    	z-index: 9;
+	    	background-color: transparent;
+	    	border:1px solid #a9a9a9;
+	    	padding: 2px;
+	    }
+	</style>
+	
+</head>
+<body>
+    <input type="checkbox">
+	<input type="text" placeholder="your name">
+	<br><input type="radio"><input type="text" placeholder="your passwords">
+	<br><input type="checkbox"><input type="text" placeholder="welcome">
+	
+	
+	
+	
+
+
+
+	<!--<script src="jscss/placeholder.js"></script>-->
+
+
+
+	<script>
+		function plhFuc() {
+			var ipt = document.createElement('input'),
+			    attribute,span;
+			    
+			 if ('placeholder' in ipt) {
+           		return;
+       		}
+						
+			inputs = document.getElementsByTagName('input');
+
+			for(var i = 0;i<inputs.length;i++) {
+                attribute=inputs[i].getAttribute('placeholder');
+				if(inputs[i].type!='text' || attribute==null) {
+					continue;
+				};
+
+				inputs[i].outerHTML = '<div class="outerDiv">'+inputs[i].outerHTML+'</div>';
+				inputs[i].outerHTML += '<span></span>';
+				span = inputs[i].parentNode.getElementsByTagName('span');
+				span[0].innerHTML = attribute;
+
+
+				inputs[i].onkeyup = function() {
+					if (this.value == ''){
+					    this.parentNode.getElementsByTagName('span')[0].style.display='block';
+					} else {
+					    this.parentNode.getElementsByTagName('span')[0].style.display='none';
+					}
+				}
+			}
+
+		}
+		plhFuc();
+	</script>
+
+</body>
+</html>

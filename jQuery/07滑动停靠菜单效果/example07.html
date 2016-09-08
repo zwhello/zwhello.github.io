@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动停靠效果</title>
+	<style>
+	    body,html {
+	    	margin:0;
+	    	padding: 0;
+	    }
+	    .outer {
+	    	background-color: red;
+	    	position: relative;
+	    	top:100px;
+	    	left:-50px;
+	    	height:100px;
+	    	width: 50px;
+	    }
+	    .inner {
+	    	background-color: blue;
+	    	position: absolute;
+	    	left:50px;
+	    	height:20px;
+	    	width: 20px;
+	    	top:50%;
+	    	margin-top: -10px;
+	    }
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+
+
+	<script src="../jquery-3.1.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			var $outer = $('.outer');
+			var $inner = $('.inner');
+			$inner
+			    .on('mouseenter',function() {
+				    $outer.animate({left:0},1000);
+			    })
+			    .parent().on('mouseleave',function() {
+				    $outer.animate({'left':-$outer.width()},500);
+			    });
+		})
+	</script>
+</body>
+</html>

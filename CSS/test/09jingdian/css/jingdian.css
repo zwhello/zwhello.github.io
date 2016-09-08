@@ -1,0 +1,46 @@
+* {
+	margin:0;
+	padding: 0;
+}
+html,body {
+	height:100%;
+}
+.clear {
+	clear:both;
+}
+.all {
+	min-height:100%;
+	/*min-width: 400px; */
+}
+.header {
+	width:auto;
+	height: 60px;
+	background-color: blue;
+}
+.left {
+	width:100px;
+	height:100px;
+	float:left;
+	background-color: red;
+}
+.right {
+	width:300px;
+	height:300px;
+	float:right;
+	background-color: green;
+}
+.center {
+	height:200px;
+	margin:0px 300px 0px 100px;
+	background: #000;
+}
+.kong {
+	height:60px;
+	width:100%;
+}
+.footer {
+	height:60px;
+	width:100%;
+	background-color: #ccc;
+	margin-top: -60px;
+}

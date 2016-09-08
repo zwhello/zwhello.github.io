@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>利用继承实现对话框</title>
+	<style>
+	    #masker {
+	    	top: 0;
+            left: 0;
+        	width: 100%;
+        	height: 100%;
+        	background-color: rgba(0, 0, 0,0.2);
+        	position: fixed;
+        	z-index: -9;
+	    }
+        #dialoge {
+        	position:absolute;
+        	left:50%;
+        	top:50%;
+        	margin-top: -100px;
+        	margin-left: -150px;
+        	background-color: #fff;
+        	width:300px;
+        	height:200px;
+        }
+        #header {
+        	height:30px;
+        	line-height:30px;
+        	background-color: #000;
+        	color:#fff;
+        	position: relative;
+        }
+        #content {
+            height:140px;
+        }
+        #footer {
+            text-align: center;
+        }
+        #close {
+             position: absolute;
+             right:5px;
+             cursor: pointer;
+        }
+	</style>
+</head>
+<body>
+	<button id="info">提示</button>
+	<button id="conform">确认</button>
+	<!-- <div id="dlg">
+		<div id="dialoge">
+			<div id="header">
+				<span id="title">提示框</span>
+				<span id="close">关闭</span>
+			</div>
+			<div id="content">这是一个提示框</div>
+			<div id="footer">
+				<button id="ok">确定</button>
+			</div>
+		</div>
+	</div> -->
+
+
+
+	<script>
+	    function Other() {
+
+	    };
+
+	    function Child(params) {
+	    	this.title = params.title;
+	    	this.close = params.close;
+	    	this.content = params.content;
+	    	this.btns = params.btns;
+	    };
+
+	    function Parent() {
+	    	
+	    };
+	   
+	    Parent.prototype = {
+	    	show:function(){
+	    		var dlgDiv = document.getElementById('dlg');
+				var html=[];
+				var dlg;
+				if(!dlgDiv) {
+            	    dlg = document.createElement('div');
+            	    dlg.id = 'dlg';
+            	    html = [
+		        	    '<div id="dialoge">',
+			        		    '<div id="header">',
+				            	'<span id="title">',
+				            	this.title,
+				            	'</span>',
+					            '<span id="close">',
+					            this.close? '关闭':'',
+					            '</span>',
+			        	    '</div>',
+			            	'<div id="content">',
+			            	this.content,
+			            	'</div>',
+			                '<div id="footer">',
+				                '<button id="ok">确定</button>',
+			                '</div>',
+			                '<div id="masker">',
+			                '</div>',
+		                '</div>'
+                    ];
+                    dlg.innerHTML = html.join('');
+                    document.body.appendChild(dlg);
+                    dlgDiv = document.getElementById('dlg');
+			    }
+
+			    // function footer() {
+			    // 	this.footer
+
+			    // }
+	    	}
+	    }
+
+	    Other.prototype = Parent.prototype;
+	    Child.prototype = new Other();
+	    Child.prototype.constructor = Child;
+
+			
+		window.onload = function() {
+            var dlg = new Child({
+                title: '测试对话框',
+                content: '我是对话框',
+                close: true,
+                // footer:['确定'，'取消']
+                dlg: true
+            });
+
+		    var info = document.getElementById('info');
+		    info.onclick = function() {
+			    dlg.show();
+		    }
+	    }
+	</script>
+</body>
+</html>

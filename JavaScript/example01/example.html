@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	    * {
+            margin:0px;
+            padding:0px;
+        }
+        div {
+        	margin:10px;
+        }
+        #test2,#parent {
+        	width:300px;
+        	height:200px;
+        	background-color: #ccc;
+        }
+        #test3 {
+            width: 80px;
+            height:30px;
+            border-radius:10px;
+            background-color: #aaa;
+            text-align: center;
+            line-height:30px;
+            cursor:pointer;
+            color:#fff;
+        }
+
+        .my-clock {
+            width:400px;
+            height:200px;
+            line-height:200px;
+            border:5px solid red;
+            text-align: center;
+            font-size:50px;
+        }
+        .dianm {
+            width:400px;
+            height:200px;
+            line-height:200px;
+            border:5px solid red;
+            text-align: center;
+            font-size:50px;
+        }
+
+        #start,#stop {
+            display: inline-block;
+            width:80px;
+            height:30px;
+            font-size:20px;
+            margin-left:80px;
+        }
+
+	</style>
+</head>
+<body>
+	<div id="test1"></div>
+	<div id="test2"></div>
+	<a href="http://www.baidu.com" id="bdlink">百度</a>
+	<!-- <a href="http://www.baidu.com" id="bdlink" target="_blank">百度</a> -->
+    <div id="test3">百度</div>
+    <div id="parent">
+        <span id="mySpan">我是span</span>
+        这是父div
+    </div>
+
+
+    <div class="my-clock" id="myClock">时钟初始化……</div>
+    <div class="dianm" id="DianM">今天中午吃什么</div>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+
+
+	<script src="js/example01.js"></script>
+</body>
+</html>

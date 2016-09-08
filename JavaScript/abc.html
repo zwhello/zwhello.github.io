@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 每一秒页面自动刷新 -->
+	<!-- <meta http-equiv="refresh"; content="1";> -->
+</head>
+<body>
+    <!-- <button onclick="hello()">提示</button>  -->
+	当前时间：<input type="text" id="my-text">
+    <button onclick="reload()">刷新</button>
+	<div id="week"></div>
+    请输入一个正整数：<input type="text" id='number' value='5'>
+    <button id="factorial" onclick="factorial()">阶乘</button>
+    <ul>
+    	<li>1item</li>
+    	<li>2item</li>
+    	<li>3item</li>
+    	<li>4item</li>
+    	<li>5item</li>
+    </ul>
+    <div id="myDiv">
+    	<span>abc1</span>
+    	<span>abc2</span>
+    	<span>abc3</span>
+    	<span>abc4</span>
+    	<span>abc5</span>
+    	<span>abc6</span>
+    </div>
+
+	<script>
+
+	var lis = document.getElementsByTagName('li');
+	for(var i=0;i<lis.length;i++){
+		if(i % 2 != 0) {
+			continue;
+		}
+		lis[i].style.color='red';
+	}
+	console.log(lis);
+
+	var myDiv = document.getElementById('myDiv');
+
+	var spans = document.getElementsByTagName('span');
+	console.log(spans);
+
+// 10—14之间的随机数
+	// myDiv.innerHTML=Math.floor(Math.random()*5+10);
+	myDiv.innerHTML=parseInt(Math.random()*5+10);
+
+
+
+
+
+// 验证toFixed()
+	var a = 0.88055;
+	a=a.toFixed(4);
+	console.log (a);
+
+// 验证字符串是否有属性
+	var b = 'abc';
+	// b.name='b';
+	console.log(b.name);
+
+
+
+	var date = new Date();
+	var today = new Date();
+	// date.setFullYear(2010);
+	//date.setMonth(date.getMonth()+1);//得到当前月的最后一天
+	date.setDate(0);//得到上个月的最后一天
+	console.log(date);
+	console.log(today);
+
+
+
+
+	var stu = {
+		name:'Bob',
+		age:18
+	};
+    
+	// var stu = new Object();
+	// stu.name = 'Bob';
+	// stu.age = 18;
+
+	// var stu = {}
+	// stu.name = 'Bob';
+	// stu.age = 18;
+
+	stu.gendar = 'male';
+
+	console.log(stu.gendar);
+    
+	console.log(stu);
+
+	stu.run = function() {
+		// alert(this.name+' is running!');
+	};
+	stu.run();
+	// delete stu.run;
+	for (var i in stu) {
+		console.log(i);
+		console.log(stu[i]);
+	};
+
+    
+
+
+
+
+
+	// 5的阶乘
+	/*var num=1;
+	for (var i=1 ; i<=5;i++) {
+        num=num*i;
+	}
+    console.log(num);
+    
+    function factorial(num) {
+    	if (num==0) {
+    		return 1;
+    	} else {
+    		return num*factorial(num-1);
+    	} 
+    };
+    var number = parseInt(document.getElementById('number').value);
+    console.log (factorial(number));*/
+
+
+// 求0-100的偶数和
+    /*var sum=0;
+    for (var i=0 ; i<=100; i+=2) {
+        sum+=i;
+    }
+    
+    for (var i=0; i<=100;i++) {
+    	if (i%2==0) {    		
+    		sum+=i;
+    	}
+    }
+    console.log(sum);*/
+
+
+
+	/*var members = ['阿衰','阿娜','小爽','阿叶'];
+	var r=parseInt(Math.random()*4);//parseInt(Math.random()*((上限-下限+1)+下限)
+	console.log(members[r]);*/
+
+
+	/*var members = ['阿衰','阿娜','小爽','阿叶','娟娟','美云','小灰灰','小猴子','小燕','小白'];
+	var r=Math.round(Math.random()*10);
+	//四舍五入有问题，为10时有问题，为0的概率小
+	console.log(members[r]);*/
+
+
+
+	/*var arr=['a','b','c','d'];
+	console.log(arr);*/
+    
+
+    /*var str='abcdef'
+    if (str.indexOf('a')==0) {
+    	console.log('以a开头');
+    }
+    else {
+    	console.log('不以a开头');
+    }
+
+    var buer=true;
+    buer=str.indexOf('a')==str.length-1
+    if (buer) {
+    	console.log('以a结束');
+    }
+    else {
+    	console.log('不以a结束');
+    }*/
+
+
+
+    // 求某文件的拓展名
+    /*var imgurl='img/abc/def.png';
+    var ext='';
+    var a=imgurl.length;//可省略，substring()参数可只写一个表示开始位置
+    var b=imgurl.lastIndexOf('.');
+    ext=imgurl.substring(b,a);
+    console.log(ext);*/
+    
+	// 显示当前日期，并利用button实现刷新
+	/*var date =new Date();
+	var y=date.getFullYear();
+	var m=date.getMonth()+1;
+	var d=date.getDate();
+	var h=date.getHours();
+	var min=date.getMinutes();
+	var sed=date.getSeconds();
+	var kong=' ';
+	if(h < 10) {
+        h='0'+h;
+	}
+	if (min.toString().length < 2) {
+        min='0'+min;
+	}
+	if (sed.toString().length < 2) {
+        sed='0'+sed;
+	}
+	var time=y + '-' + m + '-' + d + kong + h + ':' + min + ':' +sed;
+	txt=document.getElementById("my-text"); 
+    txt.setAttribute("value",time);
+
+    function reload() {
+        document.location.reload();
+    }
+	var w=date.getDay();
+	var week;
+	switch(w) {
+		case 0:{
+			week="星期天";
+		    break;
+		}
+		case 1: {
+		    week="星期一";
+		    break;
+	    }
+	    case 2: {
+		    week="星期二";
+		    break;
+	    }
+	    case 3: {
+		    week="星期三";
+		    break;
+	    }
+	    case 4: {
+		    week="星期四";
+		    break;
+	    }
+	    case 5: {
+		    week="星期五";
+		    break;
+	    }
+	    case 6: {
+		    week="星期六";
+		    break;
+	    }
+	}
+	div=document.getElementById("week");
+	div.innerHTML="友情提示：今天是"+week;
+    console.log(week);*/
+
+
+
+// 函数声明两种方法
+    /*function hello() {
+    	alert("hello world!");
+    }*/
+
+    /*var hello=function() {
+    	alert("hello world!");
+    }*/
+
+
+
+	/* i=0;
+	console.log(i);*/
+	 /* var a=1,b='3',z;
+	    z=++a + b;
+		console.log(z);
+		console.log(a); */
+
+		/* for (var a=1;a <= 10;a++) {
+		   console.log (a);
+		   }  */
+	</script>
+</body>
+</html>

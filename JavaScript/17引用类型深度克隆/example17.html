@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>引用类型深度克隆</title>
+</head>
+<body>
+	<input type="text" id="mail">
+	<button id="submit">ffff</button>
+
+
+	<script>
+	// var mail = document.getElementById('mail');
+	// var submit =  document.getElementById('submit');
+	// // var value = mail.value;
+	// submit.onclick = fun;
+	// function fun() {
+	// 	console.log(mail.value);
+
+	// 	console.log(mail.value.indexOf('.'));
+
+
+	// 	if(mail.value.indexOf(".")==-1 || mail.value.indexOf("mail.value.length-1","mail.value.length")!=".") {
+	//         console.log('mmmm');
+ //        }
+
+
+
+
+	//     if(mail.value.indexOf('.')==-1) {
+	//     	console.log('xx');
+	// 	    return;
+	//     }
+	//     if (mail.value.indexOf('.')==mail.value.length-1) {
+	//     	console.log('yy');
+	//     }	
+	// }
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	    var arr = [1,2,3];
+		function deepCopy(list) {
+			var result;
+			if(typeof list != 'object'){
+				return;
+			}
+			if(list instanceof Array) {
+				result = [];
+			} else {
+				result = {};
+			}
+
+			for(var key in list) {
+				result[key] = list[key];
+			}
+			console.log(result);
+			return result;
+		}
+		deepCopy(arr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>js实现继承</title>
+</head>
+<body>
+	
+
+	<script>
+	//方法一：
+		// function Animal() {
+		// 	this.type = 'animal';
+		// };
+		// function Dog(name,color) {
+		// 	this.name = name;
+		// 	this.color = color;
+		// };
+		// Dog.prototype = new Animal();//缺点：将Animal实例化，占内存较大
+		// Dog.prototype.constructor = Dog;//用途:constructor属性指向其构造函数，若不加这句，Dog.constructor指向Animal，使继承不明确。
+        
+  //       var dog1 = new Dog('heizi','black');
+		// console.log(dog1.constructor);
+
+
+
+
+	//方法二
+	 //    function Animal() {
+
+	 //    };
+	 //    function Dog(name,color) {
+		// 	this.name = name;
+		// 	this.color = color;
+		// };
+	 //    Animal.prototype = {type : 'animal'};
+	 //    Dog.prototype = Animal.prototype;//缺点：本次赋值为复制的指针，若Dog的prototype更改，Animal的也一起更改例如：
+	 // //    Dog.prototype.voice = 'wangwang';
+	 // //    function Cat(name,color) {
+		// // 	this.name = name;
+		// // 	this.color = color;
+		// // };
+		// // Cat.prototype = Animal.prototype;
+		// // Cat.prototype.constructor = Cat;
+
+		// // var cat1 = new Cat('miaomiao','white');
+	 // //    console.log(cat1);
+	 // //可见猫的叫声并不是汪汪，但狗的prototype改变，猫的也改变了
+
+	 //    Dog.prototype.constructor = Dog;
+
+	 //    var dog2 = new Dog('guaiguai','yellowWhite');
+	 //    console.log(dog2);
+
+	 //方法三   目前最靠谱的做法
+	    function Animal() {
+
+	    };
+	    function Dog(name,color) {
+	    	this.name = name;
+	    	this.color = color;
+	    };
+        Animal.prototype = {   //将Animal的prototype写成数组样式，赋值给A
+        	type:'animal'
+        };
+        var A = function(){
+
+	    };
+	    // A.prototype = Animal.prototype;
+	    // Dog.prototype = new A();//A是一个空对象（函数也是对象的一种），占内存很少，此时Dog是A的实例化，可得到A从Animal那里得到的prototype属性，且修改Dog的prototype不影响A
+	    // Dog.prototype.constructor = Dog;
+
+
+	    //封装成函数 
+	    // function extend(parent,child) {
+	    // 	var Other = function() {
+
+	    // 	};
+	    // 	Other.prototype = parent.prototype;
+	    // 	child.prototype = new Other();
+	    // 	child.prototype.constructor = child;
+	    // };
+
+	    // extend(Animal,Dog);
+
+	    var dog3 = new Dog('hengji','gray');
+	    console.log(dog3.type);
+
+	</script>
+</body>
+</html>

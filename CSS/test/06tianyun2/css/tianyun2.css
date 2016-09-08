@@ -1,0 +1,142 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color: #ccc;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #000;
+}
+.tpjl {
+	background-image: url(../img/nav-left.png);
+	display: block;
+	width: 25px;
+	height: 30px;
+	margin:0 auto;
+    position: relative;
+    top:15px;
+}
+.top-bar {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: #4fc2c3;
+    position: relative;
+    z-index: 9;
+}
+.top-bar .top-bar-left {
+	width: 65px;
+	height: 50px;
+	float: left;
+	background-color: #2ba6a2;
+}
+.top-bar .top-bar-left i {
+	background-image: url(../img/logo.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	display: block;
+    width: 55px;
+    height: 26px;
+    margin:8px 0 0 3px;
+}
+.top-bar .top-bar-center {
+	float: left;
+	font-size: 16px;
+	width: 220px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+}
+
+.left-bar {
+    height: 100%;
+    width: 65px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.left-bar ul {
+	margin-top: 50px;
+}
+.left-bar li {
+	list-style: none;
+	height: 78px;
+	cursor: pointer;
+}
+.left-bar .wenzi {
+	display: block;
+	text-align: center;
+	position: relative;
+	top:15px;
+}
+li.active,li:hover {
+	background-color: #4fc2c3;
+	border-left: 4px solid #2ba6a2;
+	width: 61px;
+	color: #fff;
+}
+.khgl {
+	background-position: 0 0;
+}
+.active .khgl,li:hover .khgl {
+	background-position: -30px 0;
+}
+.jdjc {
+	background-position: 0 -26px;
+}
+.active .jdjc,li:hover .jdjc {
+	background-position: -30px -26px;
+}
+.gzt {
+	background-position: 0 -56px;
+}
+.active .gzt,li:hover .gzt {
+	background-position: -30px -56px;
+}
+.ygjx {
+	background-position: 0 -86px;
+}
+.active .ygjx,li:hover .ygjx {
+	background-position: -30px -86px;
+}
+.jyfx {
+	background-position: 0 -116px;
+}
+.active .jyfx,li:hover .jyfx {
+	background-position: -30px -116px;
+}
+.qxsz {
+	background-position: 0 -146px;
+}
+.active .qxsz,li:hover .qxsz {
+	background-position: -30px -146px;
+}
+li.active i,span {
+    left:-2px;
+}
+.sanjiao {
+	display: block;
+	width: 0;
+	height: 0;
+	border-width: 5px;
+	border-style: solid;
+	border-color:#000 transparent transparent transparent;
+	position: relative;
+	top:20px;
+	left:25px;
+}
+.active .sanjiao,li:hover .sanjiao {
+	border-color:#fff transparent transparent transparent;
+}
+
+.main-wp {
+	display: block;
+	width: 1000px;
+	height: 400px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+    margin:60px auto 0px;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>复选框的全选全消</title>
+    <style>
+        table,tr,td,th {
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+	<div id="hobbies">
+	    爱好:
+	    <input type="checkbox">爬山
+	    <input type="checkbox">游泳
+	    <input type="checkbox">跑步
+	    <input type="checkbox">读书
+	</div>
+	<button id="allCheck">全选</button>
+	<button id="noCheck">全消</button>
+
+
+
+
+
+    <table id="chkTab">
+        <tr>
+            <th><input type="checkbox" id="allChk"></input></th>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></input></td>
+            <td>aaa</td>
+            <td>sss</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></input></td>
+            <td>aaa</td>
+            <td>sss</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></input></td>
+            <td>aaa</td>
+            <td>sss</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></input></td>
+            <td>aaa</td>
+            <td>sss</td>
+        </tr>
+    </table>
+
+    
+
+    <script>
+    	var hobbies = document.getElementById('hobbies');
+    	var allCheck = document.getElementById('allCheck');
+    	var noCheck = document.getElementById('noCheck');
+
+        allCheck.onclick = function() {
+        	var checkboxs = hobbies.getElementsByTagName('input');
+        	for (var i=0; i<checkboxs.length; i++) {
+        		checkboxs[i].checked='checked';
+        	}
+        }
+        noCheck.onclick = function() {
+        	var checkboxs = hobbies.getElementsByTagName('input');
+        	for (var i=0; i<checkboxs.length; i++) {
+        		checkboxs[i].checked='';
+        	}
+
+        }
+
+
+
+
+        var allChk = document.getElementById('allChk');
+        var chkTab = document.getElementById('chkTab');
+        var chks = chkTab.getElementsByTagName('input');
+
+        for(var i = 1 ; i < chks.length; i++) {
+            chks[i].onclick = function() {
+                // console.log(this);
+                if(this.checked){
+                    this.parentNode.parentNode.style.backgroundColor='yellow';
+                }
+                else {
+                    this.parentNode.parentNode.style.backgroundColor='#fff';                  
+                }
+
+                if(isCheckedAll()) {
+                    allChk.checked='checked';
+                }
+                else {
+                    allChk.checked='';
+                }
+
+            }
+        }
+        allChk.onclick = function() {
+            if (this.checked) {
+                    var status = 'checked';
+                    var bgColor = 'yellow';
+                } else {
+                    status = '';
+                    bgColor = '#fff'
+                }
+                for (var j=1; j<chks.length; j++) {
+                    chks[j].checked = status;
+                    chks[j].parentNode.parentNode.style.backgroundColor = bgColor;
+                }
+
+
+
+
+            // if(this.checked) {
+            //     for(var j=1;j<chks.length; j++){
+            //         chks[j].checked='checked';
+            //         chks[j].parentNode.parentNode.style.backgroundColor = 'yellow';
+            //     }
+            // }
+            // else{
+            //     for(var j=1;j<chks.length; j++){
+            //         chks[j].checked='';
+            //         chks[j].parentNode.parentNode.style.backgroundColor = '#fff';
+            //     }
+            // }
+        }
+
+        function isCheckedAll() {
+            for (var k =1;k<chks.length; k++) {
+                if(!chks[k].checked) {
+                    return false;
+                }               
+            }
+            return true;
+        }
+
+
+    </script>
+</body>
+</html>

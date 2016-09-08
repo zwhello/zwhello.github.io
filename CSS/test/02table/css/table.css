@@ -1,0 +1,25 @@
+*{
+	margin:0;
+	padding: 0;
+}
+.table1{
+	/*border-spacing:1px;*/
+	background-color: red;
+	border: 0px;
+	width: 100%
+}
+.table1 tr{
+	height: 50px;
+}
+.table1 td{
+	height: 50px;
+	border: 0px;
+	background-color: #fff;
+	text-align: center;
+}
+.table2 {
+	border-collapse:collapse;
+}
+.table2, .table2 td{
+	border:1px solid green;
+}

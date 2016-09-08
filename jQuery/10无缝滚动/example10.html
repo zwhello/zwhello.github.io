@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动效果</title>
+	<style>
+	    body,html,ul,li {
+		    margin:0;
+		    padding: 0;
+	    }
+	    .all {
+	    	margin:50px auto;
+	    	width:1000px;
+	    	height:100px;
+	    	border:1px solid #000;
+	    	overflow: hidden;
+	    	white-space: nowrap;
+	    }
+	    ul,li{
+	    	list-style: none;
+	    }
+	    li {
+	    	float: left;
+	    	width: 100px;
+	    	height:100px;
+	    	border:1px solid red;
+	    }
+
+	</style>
+</head>
+<body>
+    <div class="all">
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+		</ul>
+	</div>
+
+	<script src="../jquery-3.1.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			var $all = $('.all');
+			var $ul = $all.find('ul');
+			var liWid = $all.find('li').outerWidth();
+			var ulWid = liWid*$all.find('li').length;
+			if(ulWid < $all.outerWidth()) {
+				$ul.append($all.find('li').clone());
+				ulWid = liWid*$all.find('li').length;
+				$ul.width(ulWid);
+				console.log(ulWid);
+			}
+			function runner() {
+			    timer=setInterval(function(){
+                    $ul.animate({marginLeft:-liWid},1000,function(){
+                	    $ul.append($ul.find('li:first'));
+                	    $ul.css('margin-left',0);
+                    })
+			    },1000)
+			}
+			runner();
+			$all.on('mouseenter',function(){
+				clearInterval(timer);
+			});
+			$all.on('mouseleave',function(){
+				runner();
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>常用的jQuery方法</title>
+</head>
+<body>
+	<form action="" onsubmit="return false">
+		<label for="#">姓名</label><input type="text">
+		<label for="#">密码</label><input type="password">
+		<hr>
+		<input type="hidden">
+		<input type="radio">
+		<input type="checkbox"  checked="checked">
+		<select name="" id="">
+			<option value="">item1</option>
+			<option value="">item2</option>
+			<option value="" selected="selected">item3</option>
+			<option value="">item4</option>
+			<option value="">item5</option>
+		</select>
+		<input type="file">
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		<hr>
+		<input type="submit">
+		<button>my btn</button>
+		<div>my div</div>
+
+	</form>
+	<hr>
+	<span>我是span</span>
+	<ul>
+		<li>list1</li>
+		<li>list2</li>
+		<li>list3</li>
+		<li>list4</li>
+		<li>list5</li>
+	</ul>
+	<ul>
+		<li>呵呵</li>
+		<li>嘿嘿</li>
+		<li>哈哈</li>
+		<li>哦哦</li>
+		<li>恩恩</li>
+	</ul>
+
+
+
+    <script src="../jquery-3.1.0.js"></script>
+	<script>
+		console.log($('ul li:first'));
+		console.log($('ul li:first-child'));
+		console.log($(':input'));
+		console.log($(':text'));
+		console.log($(':checked'));
+		console.log($(':selected'));
+		console.log($('option').parents());
+		// console.log($('input').wrapAll('<div></div>'));
+		console.log($('span').height());
+		console.log($('span').width());
+	</script>
+</body>
+
+</html>

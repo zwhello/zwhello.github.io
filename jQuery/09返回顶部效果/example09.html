@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>返回顶部效果</title>
+	<style>
+	    .big {
+	    	position: relative;
+	    	height:3000px;
+	    	background-color: pink;
+	    }
+	    .top {
+	    	position: fixed;
+	    	height:50px;
+	    	width: 50px;
+	    	background-color: #ccc;
+	    	right:20px;
+	    	bottom:20px;
+	    	display: none;
+	    }
+	    /*.top.on {
+	    	display: block;
+	    }*/
+	</style>
+</head>
+<body>
+	<div class="big">
+		<div class="top">返回顶部</div>
+	</div>
+
+
+	<script src="../jquery-3.1.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			var $big = $('.big');
+			var $top = $('.top');
+			// var scrollTop = $(window).scrollTop();
+			$(window).on('scroll',function() {
+				var $this = $(this);
+				var height = $this.height();
+				if($this.scrollTop()>height) {
+					// $top.addClass('on');
+					$top.slideDown();
+				}else {
+					// $top.removeClass('on');
+					$top.slideUp();
+				}
+			})
+			$top.on('click',function() {
+				$('body').animate({scrollTop:0},500);
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>js实现Tab切换</title>
+	<style>
+	    a {
+	    	text-decoration: none;
+	    	color:#000;
+	    	display: inline-block;
+	    	height:30px;
+	    	line-height:30px;
+	    	width:50px;
+	    	text-align: center;
+	    	margin-left:20px;
+	    }
+	    a.on {
+	    	background-color: #000;
+	    	color:#fff;
+	    }
+	    .wp div {
+	    	background-color: #ccc;
+	    	width:400px;
+	    	height:300px;
+	    	display: none;
+	    }
+	    .wp div.on{
+	    	display: block;
+	    }
+	</style>
+</head>
+<body>
+	<div>
+		<div class="tab">
+			<a href="javascript:;" class="on">aaa</a>
+			<a href="javascript:;">bbb</a>
+			<a href="javascript:;">ccc</a>
+			<a href="javascript:;">ddd</a>
+			<a href="javascript:;">eee</a>
+		</div>
+		<div class="wp" id="wp">
+			<div class="on">11111</div>
+			<div>22222</div>
+			<div>33333</div>
+			<div>44444</div>
+			<div>55555</div>
+		</div>
+	</div>
+
+
+	<script>
+		function tabOnclick() {
+			var wp = document.getElementById('wp');
+			var tabAs = document.getElementsByTagName('a');
+			var wpDivs = wp.getElementsByTagName('div');
+			var lenA =tabAs.length;
+			var lenDiv =wpDivs.length;
+			var currentIndex;
+			if(lenA !=lenDiv) {
+				return;
+			}
+			for(var i = 0; i<lenA; i++) {
+				tabAs[i].setAttribute('data-index',i);
+				tabAs[i].onclick = function() {
+				    currentIndex = this.getAttribute("data-index");
+
+				    for (var j = 0; j<lenA; j++) {
+				    	tabAs[j].className='';
+				    	wpDivs[j].className='';
+
+				    }
+				    tabAs[currentIndex].className='on';
+				    wpDivs[currentIndex].className='on';
+				}
+			}
+		}
+		window.onload=tabOnclick;
+	</script>
+</body>
+</html>

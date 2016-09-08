@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>京东</title>
+	<style>
+	    *{
+	    	margin:0;
+	    	padding:0;
+	    }
+	    ul,li {
+	    	list-style: none;
+	    }
+	    .kong {
+	    	height:100px;
+	    }
+	    .tab {
+	    	width: 1210px;
+	    	height:34px;
+	    	margin:0 auto;
+	    	border-bottom:1px solid #c81623;
+	    }
+	    .tab>ul {
+	    	float:right;
+	    	height:33px;
+	    	border:1px solid #ededed;
+        	border-bottom:none;
+	    }
+        .tab>ul>li {
+        	float:left;
+        	height:31px;
+        	line-height:31px;
+        	padding:0px 16px;
+            position:relative;
+            top:-1px;
+            border-width: 3px 1px 0px 1px;
+            border-style: solid;
+            border-color: transparent;
+        }
+        .tab>ul>li.active {
+            border-color: #c81623;
+        	background-color: #fff;
+        	top:0px;
+        	left:-2px;
+        }
+        .tab>ul>li:after {
+        	content: "";
+        	width: 1px;
+        	height: 14px;
+        	background-color:#ccc;
+            position:absolute;
+            top:8px;
+            right:0px;
+        }
+        .tab>ul>li.last:after,.tab>ul>li.active:after{
+        	background-color:transparent;
+        }
+        .tab>ul>li>a {
+        	text-decoration:none;
+        	color: #666;
+        	font-size:12px;
+        	font-family: "微软雅黑";
+        }
+	</style>
+</head>
+<body>
+    <div class="kong"></div>
+	<div class="tab">
+		<ul>
+			<li class="active">
+			    <a href="">大牌</a>
+			</li>
+			<li>
+			    <a href="">男装</a>
+			</li>
+			<li class="active">
+			    <a href="">女装</a>
+			</li>
+			<li>
+			    <a href="">鞋靴</a>
+			</li>
+			<li>
+			    <a href="">箱包</a>
+			</li>
+			<li>
+			    <a href="">内衣配饰</a>
+			</li>
+			<li>
+			    <a href="">珠宝首饰</a>
+			</li>
+			<li>
+			    <a href="">奢品礼品</a>
+			</li>
+			<li class="last active">
+			    <a href="">奢华腕表</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

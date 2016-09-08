@@ -1,0 +1,219 @@
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-size:12px;
+	font-family: 微软雅黑;
+}
+.icons {
+	background-image: url(../img/icons.png);
+}
+.mask {
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background-color:rgba(0, 0, 0,0.2);
+	position:fixed;
+}
+.dialogue {
+	width:400px;
+	height:445px;
+	background-color: #fff; 
+	position: relative;
+	left:50%;
+	top:50%;
+	margin-left:-200px;
+	margin-top: -225px;
+	z-index: 9;
+}
+.header {
+	width: 398px;
+	height:45px;
+	background-color: #F7F7F7;
+	border: 1px solid #ddd;
+	border-width: 1px 1px 0px; 
+}
+.header-wp {
+	width: 360px;
+	height:45px;
+	margin:0 auto;
+}
+.header-wp>i {
+	float:left;
+	background-image: url(../img/baidu_logo.png);
+	width: 24px;
+	height:30px;
+	background-position: 0px 0px;
+	margin-top:5px;
+	margin-right: 5px;
+}
+.header-wp>span {
+	float:left;
+	height:45px;
+    line-height:45px;
+    font-size: 16px;
+}
+.header-wp>b {
+    float: right;
+    background-position: -56px -47px;
+    width: 16px;
+    height: 17px;
+    margin-top:13px;
+	cursor: pointer;
+}
+.header-wp>b:hover {
+    float: right;
+    background-position: -72px -47px;
+    width: 16px;
+    height: 17px;
+    margin-top:13px;
+}
+.body {
+	width: 398px;
+	height:400px;
+}
+.body-wp {
+	width: 360px;
+	height:290px;
+	margin:20px auto 0; 
+}
+.kuaijie {
+	width: 360px;
+	height:20px;
+}
+.duanxin {
+	float: right;
+}
+.duanxin > i {
+	background-image: url(../img/Phone.png);
+	background-position: 0px 0px;
+	float: left;
+	width: 9px;
+	height:15px;
+	margin-right:5px;
+}
+.duanxin > a {
+	float: left;
+	text-decoration:none;
+	color:#333;
+}
+.duanxin > a:hover {
+	text-decoration: underline;
+	color: #2830E1;
+}
+.user-name {
+	height: 40px;
+	width: 358px;
+	border:1px solid #ddd;
+	margin-top: 10px;
+}
+.user-name > i {
+	background-image: url(../img/input_icons.png);
+	background-position: -4px -71px;
+	float: left;
+	width: 20px;
+	height:20px;
+	margin:8px 5px 0 10px;
+}
+.user-name > input {
+	border:none;
+	outline: none;
+	margin-top: 5px;
+	padding:5px;
+	width: 300px;
+	font-size: 14px;
+}
+.passwords {
+	margin-top:15px;
+}
+.user-name > i.password {
+	background-position: -4px -150px;
+}
+.next {
+	height:20px;
+	margin-top: 20px;
+}
+.next-left {
+	float: left;
+}
+#check {
+	float: left;
+	margin-right: 5px;
+	margin-top: 3px;
+}
+.next > a {
+	float: right;
+	text-decoration: none;
+	font-size: 14px;
+	color: rgb(27, 102, 199);
+}
+.next > a:hover {
+	text-decoration: underline;
+}
+.log-btn {
+	height: 40px;
+	width: 358px;
+	background-color: #3F89EC;
+	border-radius: 3px;
+	line-height: 40px;
+	text-align: center;
+	font-size:16px;
+	color:#fff;
+	margin-top: 10px;
+	cursor:pointer;
+}
+.register {
+	margin-top: 10px;
+	color: rgb(27, 102, 199);
+}
+.register a {
+	color: rgb(27, 102, 199);
+}
+.footer {
+	height:89px;
+	width: 400px;
+	border-top: 1px solid #eee;
+	position:relative;
+}
+.qita {
+	width: 360px;
+	margin:10px auto 0;
+}
+.qita > span {
+	color:#333;
+}
+.bottom {
+	margin-left: 20px;
+}
+.bottom-left {
+	width: 80px;
+	height:40px;
+}
+.qq {
+	float: left;
+    background-position: -89px 0px;
+    width: 23px;
+    height: 23px;
+	cursor: pointer;
+	margin-right: 20px;
+	margin-top: 16px;
+}
+.weibo {
+    float: left;
+    background-position: -64px 0px;
+    width: 25px;
+    height: 23px;
+    margin-top:16px;
+	cursor: pointer;
+}
+.bottom-right {
+	background-position: -44px 44px;
+    width: 44px;
+    height: 44px;
+	cursor: pointer;
+	position:absolute;
+	bottom: 0;
+	right:0;
+}

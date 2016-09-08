@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重</title>
+</head>
+<body>
+	
+
+
+
+	<script>
+	// 数组去重方法一(需用===)
+		/*var arr1 = [1,34,24,26,79,34,89,100,24,'1'],
+		arr2 = [];
+		for(var j = 0;j<arr1.length;j++) {
+		    if(isInArray(arr2,arr1[j])) {
+		    	arr2.push(arr1[j]);
+		    	console.log(arr2);
+		    };
+		    console.log(arr2);
+		}
+
+		function isInArray(array , item) {
+		    for (var i=0; i<array.length; i++) {
+			    if (array[i] === item) {
+				    return false;
+			    }
+		    }
+		    return true;
+		}*/
+
+
+// 利用object的属性名不可以重复，用数组的项的值作为对象的属性名，遍历对象，，，但是所有属性名都是字符串，所以不能区分数组中的数字和字符串
+		var arr = [1,34,24,26,79,34,89,100,24,'1'],
+		    obj ={};
+		    for (var i = 0;i < arr.length; i++) {
+		    	obj[arr[i]] = arr[i];
+		    }
+		    // console.log(obj);
+		    arr.length=0;
+		    for (key in obj) {
+		    	arr.push(obj[key]);
+		    }
+		    console.log(arr);
+	</script>
+</body>
+</html>

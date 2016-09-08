@@ -1,0 +1,25 @@
+.outerDiv {
+    	display: inline-block;
+    	position: relative;
+    	margin-bottom: 20px;
+    }
+    .outerDiv > span {
+    	display: inline-block;
+    	height:100%;
+    	width: 100%;
+    	position: absolute;
+    	top:0px;
+    	left:0px;
+    	font-family: Arial;
+    	text-indent: 3px;
+    	font-size: 13.3px;
+    	color:#a9a9a9;
+	   	line-height:20px;//历史遗留问题
+	}
+	.outerDiv > input {
+    	position: relative;
+    	z-index: 9;
+    	background-color: transparent;
+    	border:1px solid #a9a9a9;
+    	padding: 2px;
+    }

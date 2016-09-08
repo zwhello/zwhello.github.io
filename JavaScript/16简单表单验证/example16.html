@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>简单表单验证</title>
+</head>
+<body>
+    <form action="" onsubmit ="return checkForm()">
+        <div>
+    	    <label>用户名：<input type="text" id="name" value="qwerty"></label>
+    	</div>
+    	<div>
+    	    <label for="#">年龄：<input type="text" id="age" value="12"></label>
+    	</div>
+    	<div>
+    	    <label for="#">性别：
+    		    <label for="male"><input type="radio" checked="checked" id="male" name="gendar">男</label>
+    		    <label for="femal"><input type="radio" id="femal" name="gendar">女</label>
+    		</label>
+    	</div>
+    	<div>
+    		<label for="#">爱好：</label>
+    		<label for="#"><input type="checkbox" name="hobby" value="读书" checked>读书</label>
+    		<label for="#"><input type="checkbox" name="hobby" value="游泳">游泳</label>
+    		<label for="#"><input type="checkbox" name="hobby" value="跑步">跑步</label>
+    		
+    	</div>
+    	<div>
+    	    <label for="#">学历：</label>
+    		<select name="education" id="education">
+    		    <option value="0">请选择</option>
+    		    <option value="1" selected="selectd">高中</option>
+    		    <option value="2">大专</option>
+    		    <option value="3">本科</option>
+    		    <option value="4">研究生</option>
+    		</select>
+    	    
+    	</div>
+    	<div>
+    	    <label for="#">联系方式：<input type="text" id="mobile" value="12345678909"></label>
+    	</div>
+    	<div>
+    	    <label for="#">邮箱：<input type="text" id="mail" value="123@qq.com"></label>
+    	</div>
+    	<div>
+    	    <label for="#">备注</label>
+    		<textarea name="" id="textarea" cols="30" rows="5"></textarea>
+    	</div>
+    	<div>
+    		<input type="submit">
+    		<input type="reset">
+    	</div>
+    </form>
+	
+
+	<script>
+	    
+		function checkForm() {
+			var name = document.getElementById('name'),
+	        age = document.getElementById('age'),
+	        education = document.getElementById('education'),
+	        mobile = document.getElementById('mobile'),
+	        hobbies = document.getElementsByName('hobby'),
+	        textarea = document.getElementById('textarea'),
+	        mobileRE = /^1\d{10}$/,
+	        mail = document.getElementById('mail'),
+	        mailRE =/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/,
+	        hobArr=[];
+			if(name.value.length < 6) {
+	    	    alert('用户名不可少于6位数');
+	    	    return false;
+	        };
+	        if(isNaN(age.value) || age.value < 0 || age.value > 100){
+	        	alert('请输入0以上100以下的整数');
+	        	return false;
+	        };
+	        if (!mobileRE.test(mobile.value)) {
+	        	alert('请输入11位手机号');
+	        	return false;
+	        };
+	        if (!mailRE.test(mail.value)) {
+	        	alert('请按正确的邮箱输入');
+	        	return false;
+	        };
+	        if (education.value == 0) {
+	        	alert('请选择学历');
+	        	return false;
+	        };
+	        for(var i=0;i<hobbies.length;i++) {
+				if(hobbies[i].checked){
+					hobArr.push(hobbies[i].value); 
+				}
+			}
+			if(hobArr.length==0) {
+				alert('请至少选择一个爱好');
+	        	return false;
+			};
+
+            console.log(hobbies);
+	        console.log(name.value+'-'+age.value+'-'+mobile.value+'-'+mail.value+'-'+education.value+'-'+hobArr.join(',')+'-'+textarea.value);
+	        alert('验证成功');
+			return false;
+
+		}
+		function checkHobby(array) {
+			for(var i=0;i<array.length;i++) {
+				if(array[i].checked){
+					hobArr.push(array[i].value); 
+					return true;
+				}
+			}
+			return false;
+		}
+
+	</script>
+</body>
+</html>

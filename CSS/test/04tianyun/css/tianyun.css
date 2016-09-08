@@ -1,0 +1,400 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #e7e6e8;
+	font-family: "Microsoft Yahei";
+	font-size: 12px;
+}
+.clear {
+	clear: both;
+}
+.tpjl {
+	background-image: url(../img/logo.png);
+}
+.top-bar {
+
+	display: block;
+    /*position: absolute;*/
+    /*top: 0px;*/
+	height: 50px;
+	width: 1326px;
+	/*width: 100%;*/
+	line-height: 50px;
+	background-color: #4fc2c3;
+	color: #fff;
+	font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+ul,li {
+	list-style: none;
+}
+.my-span {
+	float: left;
+}
+.right-top {
+	float: right;
+}
+
+li {
+	float: left;
+	margin-right: 10px;
+	height: 40px;
+	color: #fff;
+	font-size: 12px;
+}
+.right-top i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/logo.png);
+	position: relative;
+	top: 16px;
+	right: 2px;
+	float: left;
+}
+.right-top i.help {
+	background-position:-260px -228px;
+}
+.right-top i.setting {
+	background-position:-280px -228px;
+}
+.right-top i.name {
+	background-position:-351px -228px;
+	width: 40px;
+	height: 40px;
+	margin-top: -13px;
+}
+.span1,.span2,.span3 {
+	float: left;
+}
+.span21 {
+	padding: 0 0 0 15px;
+    font-size: 20px;
+}
+.main-wp {
+	background-color: #fff;
+	width: 960px;
+	margin: 20px auto 0;
+    padding: 30px 10px 10px 30px;
+}
+
+.date-piker {
+	width:180px; 
+	height:30px;
+	/*border: 1px solid #ccc;*/
+	float: left;
+}
+.date-left {
+	float: left;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-color: #4fc2c3;
+}
+.xiaoyu {
+	float: left;
+	display: block;
+	width: 15px;
+	height: 15px;
+	background-position: -62px -71px;
+	margin-left: 6px;
+	margin-top: 6px;
+	cursor: pointer;
+}
+.date-center {
+	float: left;
+    width: 120px;
+    height: 28px;
+    font-size: 16px;
+    text-align: center;
+    line-height:28px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.date-right {
+	float:right;
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-color: #ccc;
+}
+.dayu {
+	float: right;
+	display: block;
+	width: 15px;
+	height: 15px;
+	background-position: -65px -86px;
+	margin-right: 6px;
+	margin-top: 6px;
+	cursor: pointer;
+}
+.search-wp {
+	width:296px; 
+	height:30px;
+	border: 1px solid #ccc;
+    float: left;
+    margin-left: 370px;
+    line-height: 30px;
+    color: #ccc;
+    padding-left: 5px;
+}
+.search-btn {
+	width:66px; 
+	height:30px;
+	/*border: 1px solid #ccc;*/
+    float: right;
+    margin-right: 20px;
+    background-color:#4fc2c3;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    color:#fff; 
+    cursor: pointer;
+
+}
+.list-items {
+	margin-top: 20px;
+}
+.list-items a {
+	border: 1px solid  #caebeb;
+    width: 298px;
+    height: 228px;
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.list-items a:hover {
+	border: 1px solid #50c2c4;
+} 
+.del-btn {
+	width: 24px;
+	height: 24px;
+    background-position: -145px -1px;
+    position: absolute;
+    right:-12px;
+    top:-12px;
+    display: none;
+}
+.list-items a:hover .del-btn {
+	display: block;
+}
+.add-label {
+	height: 58px;
+	line-height: 58px;
+	background-color: #caebeb;
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    /*width: 100%;*/
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+}
+.add-label i {
+	display: block;
+	width: 13px;
+	height: 7px;
+	background-position: -111px -72px;
+	position: absolute;
+	top:-7px;
+	left: 50%;
+	margin-left: -6.5px;
+}
+.add-btn {
+	display: block;
+	width: 76px;
+	height: 76px;
+	background-position: 0px -102px;
+/*	第一种方法
+    position: absolute;
+	top:50px;
+	left: 50%;
+	margin-left: -40px;*/
+	margin:50px auto 0;
+}
+.list-items a:hover .add-btn {
+	background-position: -75px -102px;
+}
+/*.add-btn:hover {
+	background-position: -75px -102px;
+}*/
+.div1 {
+	height: 50px;
+	background-color: #faffff;
+	border-bottom:1px solid #caebeb;
+}
+.i1 {
+	float: left;
+	display: block;
+	width: 35px;
+	height: 35px;
+	background-position: 391px -1px;
+	margin:10px 0 0 10px;
+}
+.i1:hover {
+	background-position: 515px -1px;
+}
+.div1 b {
+	float: left;
+	color: #000;
+	font-size: 17px;
+	display: block;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	margin-top:10px;
+	margin-left: 5px;
+}
+.i2 {
+	float: right;
+	display: block;
+	width: 64px;
+	height: 64px;
+	background-position: 391px -36px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.shuju {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 103px;
+}
+.div2,.div3,.div4 {
+	float: left;
+	display: block;
+	width:160px;
+	height:33px;
+}
+.i2-1,.i3-1,.i4-1 {
+	float: left;
+	display: block;
+	width: 8px;
+	height: 8px;
+	margin:17px 0px 0 30px;
+}
+.i2-1 {
+	background-position: 51px -220px;
+}
+.i3-1 {
+	background-position: 41px -220px;
+}
+.i4-1 {
+	background-position: 31px -220px;
+}
+.span2-1,.span3-1,.span4-1 {
+	float: left;
+	list-style: none;
+	font-size: 16px;
+	display: block;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+	padding: 0 0 0 15px;
+}
+.span2-2,.span3-2,.span4-2 {
+	float: left;
+	list-style: none;
+	font-size: 16px;
+	display: block;
+	width: 50px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #4fc2c3;
+}
+.span3-2 {
+	color: #a5d5a0;
+}
+.span4-2 {
+	color: #d3d3d3;
+}
+.tupian {
+	/*float: right;*/
+	display: block;
+	width: 104px;
+	height: 104px;
+	background-position: 0px 0px;
+	position: absolute;
+	top: 55px;
+	right: 20px;
+	background-image: url(../img/quan.png);
+}
+.bottom {
+	/*float: left;*/
+	display: block;
+	width: 100%;
+	height: 58px;
+	background-position: 0px 0px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	left:0px;
+	background-color: #f6f6f6;
+}
+.shang {
+	background-image: url(../img/line.png);
+	background-repeat: repeat-x;
+	display: block;
+	width: 298px;
+	height: 8px;
+	background-position: 0px 0px;
+	position: absolute;
+}
+.zuo {
+	float: left;
+	display: block;
+	width: 17px;
+	height: 17px;
+	background-position: -65px -54px;
+	margin-left: 20px;
+	margin-top: 23px;
+}
+.zhong {
+	float: left;
+	display: block;
+	width: 120px;
+	height: 20px;
+	font-size: 16px;
+	color: #000;
+	margin-top: 23px;
+	margin-left: 3px;
+}
+.you {
+	float: right;
+	display: block;
+	width: 100px;
+	height: 30px;
+	background-color: #ffc300;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	margin-top: 17px;
+	margin-right: 20px;
+    /*cursor: pointer;*/
+
+}
+.i11 {
+	float: left;
+	display: block;
+	width: 35px;
+	height: 35px;
+	background-position: 356px -1px;
+	margin:10px 0 0 10px;
+}
+.i11:hover {
+	background-position: 283px -1px;
+}

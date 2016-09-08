@@ -1,0 +1,24 @@
+/*用div完成一个按钮，宽100，高30；红色背景，白色文字，1像素蓝色边框，3像素圆角；鼠标悬停时，蓝色背景，黄色文字，1像素红色边框，三像素圆角.*/
+.red-btn {
+	width: 100px;
+	height: 30px;
+	background-color: red;
+	color: white;
+	border: 1px solid blue;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	cursor: pointer;/*指向时光标变成小手
+	cursor: wait;指向时光标转圈*/
+
+}
+.red-btn:hover {
+	background-color: blue;
+	color: yellow;
+	border: 1px solid red;
+	border-radius: 3px;
+	/*cursor: pointer;*/
+}

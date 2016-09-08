@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>灵动菜单效果</title>
+	<style>
+	    body,html,ul,li {
+	    	margin:0;
+	    	padding:0;
+	    }
+	    .header {
+	    	height:300px;
+	    	background-color: blue;
+	    }
+	    .nav {
+	    	height:50px;
+	    	background-color: red;
+	    }
+	    .nav.fix {
+	    	position: fixed;
+	    	top:0;
+	    	width: 100%;
+	    }
+	    .wp {
+	    	height:1000px;
+	    	background-color: yellow;
+	    }
+	    .wp.fix {
+	    	margin-top: 50px;
+	    }
+	</style>
+</head>
+<body>
+	<div class="header">
+		这里是header
+	</div>
+	<div class="nav">
+		这里是导航栏
+	</div>
+	<div class="wp">
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			<li>item6</li>
+			<li>item7</li>
+			<li>item8</li>
+			<li>item9</li>
+			<li>item10</li>
+			<li>item11</li>
+			<li>item12</li>
+			<li>item13</li>
+			<li>item14</li>
+			<li>item15</li>
+			<li>item16</li>
+			<li>item17</li>
+			<li>item18</li>
+			<li>item19</li>
+			<li>item20</li>
+		</ul>
+	</div>
+
+
+	<script src="../jquery-3.1.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			var $header = $('.header');
+			var $nav = $('.nav');
+			var $wp = $('.wp');
+			var top = $header.height();
+			$(window).on('scroll',function() {
+				var $this = $(this);
+				if($this.scrollTop()>top) {
+				    $nav.add($wp).addClass('fix');
+			    }else {
+				    $nav.add($wp).removeClass('fix');
+			    }
+			})
+			
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style>
+        #lastTime {
+        	font-size: 80px;
+        }
+	</style>
+</head>
+<body>
+	<div id="lastTime">00:00:00</div>
+	<input type="text" id="time">
+	<select id="type">
+	    <option value="">请选择</option>
+		<option value="hour">小时</option>
+		<option value="minute">分钟</option>
+		<option value="second">秒</option>
+	</select>
+	<button id="start">开始倒计时</button>
+
+
+
+
+	<script>
+		var lastTime = document.getElementById('lastTime');
+		var time = document.getElementById('time');
+		var type = document.getElementById('type');
+		var start = document.getElementById('start');
+
+		var totalTime;
+		start.onclick=calculate;
+
+        function calculate(){
+        	if(isNaN(time.value) || time.value=='') {
+        		alert('请输入一个整数');
+        		return;
+        	}
+
+		    var timeText = parseInt(time.value);
+
+		    if(type.value=='hour'){
+		    	totalTime=timeText*60*60;
+		    }
+		    if(type.value=='minute'){
+		    	totalTime=timeText*60;
+		    }
+		    if(type.value=='second'){
+		    	totalTime=timeText;
+		    }
+            if(start.innerHTML == '开始倒计时'){
+            	// start.innerHTML = '暂停倒计时';
+		        timer=setInterval(function(){
+
+		    	    start.disabled='disabled';
+		    	   
+		    	    if(totalTime<=10) {
+		    		    lastTime.style.color='red';
+		    	    }
+		    	    var h = Math.floor(totalTime / 3600);
+		    	    if(h>=24) {
+		    	    	var d = Math.floor(totalTime / 3600 / 24);
+		    	    	h = Math.floor(totalTime / 3600-d*24);
+		    	    }
+		    	    if(h<10) {
+		    		    h='0'+h;
+		    	    }
+		    	    var miu = Math.floor(totalTime % 3600 / 60);
+		    	    if(miu<10) {
+		    		    miu='0'+miu;
+		    	    }
+		    	    var sed = Math.floor(totalTime % 60);
+		    	    if(sed<10) {
+		    		sed='0'+sed;
+		    	    }
+		    	    if(totalTime==0) {
+		    	        clearInterval(timer);
+		    	        // start.innerHTML='开始倒计时';
+		    	        lastTime.style.color='#000';
+		    	        start.disabled='';
+		            }
+		            totalTime--;
+		            if(d) {
+		                lastTime.innerHTML=d+'天'+h+':'+miu+':'+sed;
+		            }else {
+		            	lastTime.innerHTML=h+':'+miu+':'+sed;
+		            }
+		        },1000)	
+		    }	    
+        }
+	</script>
+</body>
+</html>

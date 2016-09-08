@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>手风琴菜单</title>
+	<style>
+	    body {
+	    	background-color: #ccc;
+	    }
+	    ul,li{
+	    	list-style:none;
+	    }
+	    .bg {
+	    	background-color: #fff;
+	    	width:200px;
+	    	margin:0 auto;
+	    }
+	    .item {
+	    	border:1px solid #999;
+	    	cursor:pointer;
+	    }
+	    .item >h2 {
+	    	margin: 0px;
+	    	border-bottom: 1px solid #999;
+	    }
+	    .item >h2.color {
+	    	color:red;
+	    }
+	    .item >ul {
+            display: none;
+            padding: 0px;
+            margin-left: 10px;
+	    }
+	    .item >ul.block {
+	    	display: block;
+	    }
+	    .item >ul > li:hover {
+	    	background-color: #a9a9a9;
+	    }
+
+	</style>
+</head>
+<body>
+	<div class="bg">
+		<div class="item">
+		    <h2>经济管理学院</h2>
+		    <ul>
+		    	<li>信息管理与信息系统</li>
+		    	<li>工程管理</li>
+		    	<li>物流管理</li>
+		    	<li>工业工程</li>
+		    	<li>金融工程</li>
+		    </ul>
+		</div>
+		<div class="item">
+		    <h2>信息学院</h2>
+		    <ul>
+		    	<li>电子科学</li>
+		    	<li>通信工程</li>
+		    	<li>信息工程</li>
+		    	<li>软件工程</li>
+		    </ul>
+		</div>
+		<div class="item">
+		    <h2>外语学院</h2>
+		    <ul>
+		    	<li>对外汉语</li>
+		    	<li>商务英语</li>
+		    	<li>小语种</li>
+		    	<li>法语专业</li>
+		    </ul>
+		</div>
+		<div class="item">
+		    <h2>纺织学院</h2>
+		    <ul>
+		    	<li>对韩贸易</li>
+		    	<li>纺织工程</li>
+		    	<li>服装设计</li>
+		    </ul>
+		</div>
+	</div>
+
+
+	<script src="../jquery-3.1.0.js"></script>
+	<script>
+		function shoufq() {
+			var $item = $('.item');
+			console.log($item);
+
+			$item.on('click',function(){
+                var $this = $(this);
+                $this.children('ul').toggleClass('block');
+                $this.children('h2').toggleClass('color');
+                $this.siblings().children('ul').removeClass('block');
+                $this.siblings().children('h2').removeClass('color');
+			});
+		}
+		window.onload=shoufq;
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>动态生成下拉菜单</title>
+</head>
+<body>
+	<select name="" id="sel">
+		
+	</select>
+	<button id="btn">生成</button>
+
+
+
+	<script>
+		var btn = document.getElementById('btn');
+		var sel = document.getElementById('sel');
+
+		// function selChange() {
+		// 	var option1 = document.createElement('option');
+		// 	var option2 = document.createElement('option');
+		// 	var option3 = document.createElement('option');
+		// 	var option4 = document.createElement('option');
+		// 	var option5 = document.createElement('option');
+
+		// 	option1.innerHTML='北京';
+		// 	option2.innerHTML='上海';
+		// 	option3.innerHTML='天津';
+		// 	option4.innerHTML='杭州';
+		// 	option5.innerHTML='深圳';
+
+		// 	sel.appendChild(option1);
+		// 	sel.appendChild(option2);
+		// 	sel.appendChild(option3);
+		// 	sel.appendChild(option4);
+		// 	sel.appendChild(option5);
+
+		// 	var options = sel.getElementsByTagName('option');
+		//     console.log(options);
+
+		// }
+		// btn.onclick=selChange;
+
+
+
+		var arr = ['北京','上海','天津','杭州','深圳'];
+// 利用空数组比利用空字符串可以提高效率
+		function arrToOption() {
+			var optArr=['<option value="a">请选择</option>'];
+			for(var i=0;i<arr.length;i++){
+				optArr.push('<option value="'+i+'"'+'>',arr[i],'</option>');
+			}
+			sel.innerHTML= optArr.join('');
+		}
+
+		btn.onclick = arrToOption;
+		
+	</script>
+</body>
+</html>

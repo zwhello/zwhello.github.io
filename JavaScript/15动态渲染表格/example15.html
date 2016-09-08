@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>根据由对象组成的数组，渲染一个表格</title>
+	<style>
+	    table {
+	    	border-collapse:collapse;
+	    }
+	    table,tr,td,th {
+	    	border:1px solid pink;
+	    }
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+
+	<script>
+		var arrObj = [
+            {
+            	name:'angale',
+            	age:10,
+            	gendar:'femal'
+            },
+            {
+            	name:'Bob',
+            	age:11,
+            	gendar:'male'
+            },
+            {
+            	name:'vivi',
+            	age:9,
+            	gendar:'male'
+            },
+            {
+            	name:'lily',
+            	age:10,
+            	gendar:'femal'
+            }
+		],
+		arrWp = [],i,len=arrObj.length,
+		tBody=document.getElementsByTagName('tbody')[0];
+		for(i=0; i < len; i++) {
+			arrWp.push('<tr>');
+			for(j in arrObj[i]){
+				arrWp.push('<td>',arrObj[i][j],'</td>');
+			}
+			arrWp.push('</tr>');
+		}
+		console.log(arrWp.join(''));
+		tBody.innerHTML = arrWp.join('');
+	</script>
+</body>
+</html>

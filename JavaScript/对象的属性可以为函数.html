@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script>
+		function stringconcat(a,b) {
+			console.log(a+'+'+b);
+		}
+		stringconcat('a','b');
+// var stringconcatWithPrefix = stringconcat.prefix('helloworld');
+// stringconcatWithPrefix('a','b')  获得helloworld+a+b;
+
+
+		stringconcat.prefix = function(c) {
+			return function(a,b) {
+				return c+'+'+a+'+'+b;
+			}
+		}
+
+        var r1 = stringconcat.prefix('helloworld');
+        var r2 = r1('a','b');
+        console.log(r1);
+        console.log(r2);
+		
+	</script>
+</body>
+</html>

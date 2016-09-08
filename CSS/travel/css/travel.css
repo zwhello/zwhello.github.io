@@ -1,0 +1,79 @@
+* {
+	margin:0;
+	padding:0;
+}
+ul,li {
+	list-style: none;
+}
+.main-wp {
+	height:345px;
+	width: 351px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top:-200px;
+	margin-left:-175px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.main {
+    height:400px;
+	width: 331px;
+	margin:10px auto 0;
+}
+.img {
+	display: block;
+	height:125px;
+	width: 331px;
+	position: relative;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.wenzi {
+	position: absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:20px;
+	background-color: rgba(0,0,0,0.5);
+	line-height:20px;
+	text-align: center;
+	color:#fff;
+}
+.next {
+	height:90px;
+	width: 331px;
+	border-bottom:1px dashed #999;
+	margin-bottom: 10px;
+}
+.next > p {
+	width: 165px;
+	height:20px;
+}
+.next > ul > li {
+	width: 165px;
+	height:20px;
+	float: left;
+}
+.main>ul {
+	hieght:90px;
+}
+.main li {
+	height:20px;
+	width: 331px;
+}
+.main li > span {
+	float: left;
+} 
+.main li > a {
+	float: left;
+	text-decoration: none;
+} 
+.main li > a:hover {
+	color: orange;
+}
+.main li > p {
+	float: right;
+	color:red;
+	cursor: pointer;
+} 

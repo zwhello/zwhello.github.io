@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>九九乘法表</title>
+</head>
+<body>
+	<div id="myDiv"></div>
+
+
+
+
+	<script>
+
+	    var myDiv = document.getElementById('myDiv');
+	    var tableArr = ['<table style="border-collapse:collapse">']; 	    
+		for(var i = 1;i <= 9;i++) {
+			tableArr.push('<tr>');
+			for(var j = 1;j <= i;j++) {
+			    tableArr.push('<td style="border:1px solid #000;padding:5px 10px">');
+				tableArr.push(i+'*'+j+'='+i*j);
+			    tableArr.push('</td>');
+			}
+			tableArr.push('</tr>');
+		}
+		tableArr.push('</table>');
+		console.log(tableArr);
+		myDiv.innerHTML=tableArr.join('');
+	</script>
+</body>
+</html>

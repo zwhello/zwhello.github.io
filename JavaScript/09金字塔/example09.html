@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>金字塔</title>
+	<style>
+	    #leftWp {	    	
+	    	float: left;
+	    	margin-top: 22px;
+	    }
+	    #rightWp {
+	    	float: left;
+	    }
+	    /*#Wp {
+	    	float: left;
+	    }*/
+	    span {
+	    	display: inline-block;
+	    	width: 20px;
+	    	height:20px;
+	    }
+	</style>
+</head>
+<body>
+    <div id="Wp"></div>
+	<div id="leftWp"></div>
+	<div id="rightWp"></div>
+
+
+
+
+	<script>
+		var rightWp = document.getElementById('rightWp');
+		var leftWp = document.getElementById('leftWp');
+		var Wp = document.getElementById('Wp');
+
+//平行四边形
+		// var arr = ['<table>'];
+  //       for(var i=1;i<=6;i++) {
+		// 	arr.push(['<tr>']);
+		// 	for(var j=1;j<=6;j++) {
+		// 		if(i<=j){
+  //                   arr.push(['<td>*<td>']);
+  //               }
+  //               else
+  //               {
+  //               	arr.push(['<td>   <td>']);
+  //               }
+		// 	}
+		// 	arr.push(['</tr>']);
+		// }
+		// arr.push(['</table>']);
+		// Wp.innerHTML=arr.join('');
+
+
+
+
+		/*var arr1 = ['<table>'];
+		for(var i=5;i>=1;i--) {
+			arr1.push(['<tr>']);
+			for(var j=1;j<=5;j++) {
+                if(i<=j){
+                    arr1.push(['<td>*<td>']);
+                }
+                else
+                {
+                	arr1.push(['<td>   <td>']);
+                }
+			}
+			arr1.push(['</tr>']);
+		}
+		arr1.push(['</table>']);
+		leftWp.innerHTML=arr1.join('');*/
+
+		/*var arr2 = ['<table>'];
+		for(var i=1;i<=6;i++) {
+			arr2.push(['<tr>']);
+			for(var j=1;j<=i;j++) {
+                arr2.push(['<td>*<td>'])
+			}
+			arr2.push(['</tr>']);
+		}
+		arr2.push(['</table>']);
+		rightWp.innerHTML=arr2.join('');*/
+
+        var arr = [];
+		for(var i=1;i<7;i++) {
+			arr.push(['<div>']);
+			for(var k = 1;k<7-i;k++) {
+				arr.push(['<span> </span>']);
+			}
+			arr.push(['</tr>']);
+			for(var j=1;j<=2*i-1;j++) {
+                arr.push(['<span>*</span>']);
+			}
+			arr.push(['</div>']);
+		}
+		// arr.push(['</table>']);
+		Wp.innerHTML=arr.join('');
+	</script>
+</body>
+</html>

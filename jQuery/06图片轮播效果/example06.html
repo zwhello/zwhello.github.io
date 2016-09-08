@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播效果</title>
+	<style>
+	    ul,li{
+	    	list-style: none;
+	    	padding:0;
+	    	margin:0px;
+	    }
+	    .masker {
+	    	position: fixed;
+	    	top:0;
+	    	bottom: 0;
+	    	left:0;
+	    	right:0;
+	    	background-color: pink;
+	    }
+	    .all {
+	    	width: 500px;
+	    	height:200px;
+	    	background-color: #fff;
+	    	position:absolute;
+	    	top:50%;
+	    	left:50%;
+	    	margin-top: -150px;
+	    	margin-left:-250px;
+	    	overflow: hidden;
+	    }
+	    .all > span{
+            width: 50px;
+            height:50px;
+            position:absolute;
+            top:50%;
+            margin-top: -25px;
+            background-color: #ccc;
+            line-height:50px;
+            display: none;
+            cursor: pointer;
+	    }
+	    span.left {
+	    	left:0px;
+	    }
+	    span.right {
+            right:0px;
+	    }
+	    .all:hover > span {
+	    	display: block;
+	    }
+	    .footer>a {
+	    	text-decoration: none;
+	    	color:red;
+            float: left;
+            height:20px;
+            width: 100px;
+            background-color: #ccc;
+            line-height:20px;
+            text-align: center;
+	    }
+	    .footer>a.on {
+	    	background-color: #999;
+	    }
+	    .footer {
+	    	position: absolute;
+	    	bottom: 0;
+	    }
+	    
+	    li {
+	    	width: 500px;
+	    	height:200px;
+	    	float: left;
+	    }
+	    ul {
+	    	/*width:2500px;*/
+	    	height:200px;
+	    }
+
+	</style>
+</head>
+<body>
+    <div class="masker">
+    	<div class="all">
+
+    		<ul>
+    			<li>item1</li>
+    			<li>item2</li>
+    			<li>item3</li>
+    			<li>item4</li>
+    			<li>item5</li>
+    		</ul>
+    		<div class="footer">
+    		    <a href="#" class="on">1</a>
+    		    <a href="#">2</a>
+    		    <a href="#">3</a>
+    		    <a href="#">4</a>
+    		    <a href="#">5</a>
+    		</div>
+    		<span class="left">上一页</span>
+    		<span class="right">下一页</span>
+    	</div>
+    </div>
+
+    <script src="../jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function() {
+        	var $all = $('.all');
+        	var $spans = $('span');
+        	var $as = $('a');
+        	var $lis = $('li');
+        	var $ul = $('ul');
+    		var liWid = $ul.find('li').width();
+    		var len =$ul.find('li').length; 
+    		var ulWid = liWid*len;
+    		var currentIndex;
+    		$ul.width(ulWid);
+
+    		//自动轮播   触发上一页事件
+            function runner() {
+                timer = setInterval(function() {
+                    $all.find('span.left').trigger('click');
+                },2000);
+            }
+
+            runner();
+
+
+
+    		// if($as.length == len){
+    		//     timer = setInterval(timerFun,2000);
+    		//     function timerFun(){
+    		// 	    $ul
+    		// 	        .prepend($ul.find('li:last'))
+    		// 	        .css('margin-left',-liWid);
+    		// 	    $ul.animate({marginLeft:0},500);
+    		// 	    currentIndex = $('a.on').index();
+    		// 	    currentIndex--;
+    		// 		currentIndex = currentIndex+len;
+    		// 		$as.eq(currentIndex%len).addClass('on').siblings('.on').removeClass('on'); 			    
+    		//     };
+    		// };
+
+    		//左右翻页？？？stop()????
+    		$spans.on ('click',function() {
+    			var $this = $(this);
+    			var currentIndex = $('a.on').index();
+                if ( $('ul:animated').length > 0 ) {
+                    return;
+                }
+    			if($this.hasClass('left')){
+    				currentIndex--;
+    				currentIndex = currentIndex+len;
+    				$ul
+    				    .prepend($ul.find('li:last'))
+    				    .css('margin-left',-liWid);
+    				$ul.animate({marginLeft:0},500);
+    			}else {
+    				currentIndex++;
+    				$ul.animate({marginLeft:-liWid},500,function() {
+    					$ul
+    					    .append($ul.find('li:first'))
+    					    .css('margin-left',0);
+    				})
+    			}
+    			$as.eq(currentIndex%len).addClass('on').siblings('.on').removeClass('on');
+    		});
+
+    		//点击跳转 ??????
+    		$as.on('click',function() {
+    			var $this = $(this);
+    			var index = $this.index();
+    			$ul.animate({marginLeft: -liWid*index},500, function() {
+    				// $ul.css('margin-left',0);
+					$as.eq(index-2).addClass('on').siblings('.on').removeClass('on');
+				});
+    		});
+
+    		//覆盖暂停
+    		$all.on('mouseover',function() {
+    			if(timer){
+    				clearInterval(timer);
+    			}
+    		})
+    		$all.on('mouseleave',function() {
+    			runner();
+    		})
+
+
+            
+        })
+    	
+        
+    </script>
+	
+</body>
+</html>

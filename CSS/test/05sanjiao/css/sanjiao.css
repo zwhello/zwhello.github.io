@@ -1,0 +1,128 @@
+* {
+	margin:0px;
+	padding: 0px;
+}
+/*.arrow {
+    margin:50px auto;*/
+/*宽高为0
+border-color根据要求
+transparent是透明的意思*/
+/*	width: 0px;
+	height: 0px;*/
+	/*border:10px solid red;*/
+/*    border-width: 50px;
+	border-style: solid;*/
+	/*border-color:red #fff #fff #fff;*/
+/*	border-color:blue transparent transparent;
+}*/
+/*.arrow:hover {
+	border-color:transparent transparent blue transparent;
+}*/
+.netease-nav {
+	display: block;
+	height: 75px;
+	background-color: #e34551;
+	width: 100%;
+	line-height:75px;
+}
+.netease-nav .logo {
+	width: 385px;
+	height: 70px;
+	float: left;
+	/*border:1px solid #000;*/
+}
+.netease-nav li {
+	float: left;
+	list-style:none;
+	color:#fff;
+	font-family: "微软雅黑";
+	width: 120px;
+	text-align: center;
+	position: relative;
+}
+.netease-nav li.active {
+	background-color: #bc353f;
+}
+.netease-nav li:hover {
+    background-color: #bc353f;
+}
+.netease-nav li.dianying b {
+	width: 0;
+	height: 0;
+	border-width: 5px;
+	border-style: solid;
+	border-color:#fff transparent transparent;
+	/*display: inline-block;*/
+	position: absolute;
+	top: 37px;
+	right: 30px;
+}
+/*------------------------------*/
+.wp {
+	position: reletive;
+    margin:200px;
+}
+.wp .red-btn {
+	padding: 10px 16px;
+	background-color: #d9534f;
+	display: inline-block;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    float: left;
+}
+.wp .pop-hover {
+    border:1px solid #ccc;
+    height:100px;
+    width:300px;
+    /*display:inline-block;*/
+    position: relative;
+    top:-32px;
+    left:20px;
+    border-radius:3px;
+    float: left;
+
+}
+.wp .pop-hover .arrow1,.arrow2 {
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style: solid;
+	border-color:transparent #ccc transparent transparent;
+	position: relative;
+	top: 50%;
+	left: -21px;
+    margin-top: -10px;
+
+}
+.wp .pop-hover .arrow2 {
+	border-color: transparent #fff transparent transparent;
+	left: -20px;
+    margin-top: -20px;
+
+}
+.pop-hover-top {
+	width: 200px;
+	height: 100px;
+	border:1px solid pink;
+	position: relative;
+	top:-112px;
+	left:-23px;
+	border-radius:5px;
+}
+.pop-hover-top .top-arrow1,.top-arrow2 {
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-style:solid;
+	border-color:pink transparent transparent transparent;
+	position: relative;
+	top: 101px;
+	left:85px;
+}
+.pop-hover-top .top-arrow2 {
+	border-color:#fff transparent transparent transparent;
+    top:100px;
+    margin-top: -20px;
+}
+
